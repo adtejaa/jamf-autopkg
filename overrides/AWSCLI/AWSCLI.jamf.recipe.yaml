@@ -1,8 +1,8 @@
 Identifier: com.github.adtejaa.jamf.AWSCLI
 Input:
-  API_PASSWORD: '%JAMF_API_PASSWORD%'
-  API_USERNAME: '%JAMF_API_USERNAME%'
-  JSS_URL: '%JAMF_URL%'
+  API_PASSWORD: '%JAMFPASSWORD%'
+  API_USERNAME: '%JAMFUSER%'
+  JSS_URL: '%JAMFURL%'
   CATEGORY: Utility
   GROUP_NAME: '%NAME%-update-smart'
   GROUP_TEMPLATE: JamfSmartGroupTemplate.xml
