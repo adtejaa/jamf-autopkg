@@ -366,7 +366,6 @@ def main():
     recipes = parse_recipes(recipes)
     for recipe in recipes:
         handle_recipe(recipe, opts)
-        slack_alert(recipe, opts)
         if not opts.disable_verification:
             if not recipe.verified:
                 failures.append(recipe)
