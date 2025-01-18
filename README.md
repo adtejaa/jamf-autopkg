@@ -124,5 +124,5 @@ git push origin main
 
 ## References
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [AutoPkg Documentation](https://github.com/autopkg/autopkg)
+- [JAMF-AutoPkg Documentation][(https://github.com/autopkg/autopkg)](https://github.com/bolaussen/fastly-autopkg)
 - [JamfUploader Documentation](https://github.com/grahampugh/jamf-upload)
