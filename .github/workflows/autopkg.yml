@@ -59,6 +59,7 @@ jobs:
         defaults write com.github.autopkg JAMF_API_USERNAME "${{ secrets.YOUR_GITHUB_SECRET_NAME }}"
         defaults write com.github.autopkg JAMF_API_PASSWORD "${{ secrets.YOUR_GITHUB_SECRET_NAME }}"
         defaults write com.github.autopkg JAFM_URL "${{ secrets.YOUR_GITHUB_SECRET_NAME }}"
+        defaults write com.github.autopkg SLACK_WEBHOOK_URL "${{ secrets.YOUR_GITHUB_SECRET_NAME }}"
         git config --global user.name "runner"
         git config --global user.email "runner@githubactions.local"
 
