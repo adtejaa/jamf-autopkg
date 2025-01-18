@@ -1,3 +1,4 @@
 [
-	"AWSCLI/AWSCLI.jamf.recipe.yaml"
+	"AWSCLI/AWSCLI.jamf.recipe.yaml",
+	"Firefox/Firefox.jamf.recipe.yaml"
 ]
