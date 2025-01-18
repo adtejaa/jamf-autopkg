@@ -15,7 +15,7 @@ Input:
   SELF_SERVICE_DISPLAY_NAME: Install Latest %NAME%
   SELF_SERVICE_ICON: '%NAME%.png'
   TESTING_GROUP_NAME: Testing
-  UPDATE_PREDICATE: pkg_uploaded == True
+  UPDATE_PREDICATE: pkg_uploaded == False
 MinimumVersion: 0.6.1
 ParentRecipe: com.github.homebysix.pkg.AWSCLI
 ParentRecipeTrustInfo:
