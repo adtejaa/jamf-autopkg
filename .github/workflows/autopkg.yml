@@ -20,7 +20,8 @@ on:
         options:
         - 'False'
         - 'True'
-
+permissions:
+  contents: write
 jobs:
   AutoPkg:
     runs-on: macos-latest
