@@ -1,47 +1,53 @@
 Identifier: com.github.adtejaa.jamf.AWSCLI
-ParentRecipe: com.github.homebysix.pkg.AWSCLI
 Input:
-  NAME: AWSCLI
   CATEGORY: Utility
-  GROUP_NAME: "%NAME%-update-smart"
+  GROUP_NAME: '%NAME%-update-smart'
   GROUP_TEMPLATE: JamfSmartGroupTemplate.xml
-  POLICY_CATEGORY: "%CATEGORY%"
-  POLICY_NAME: "Install Latest %NAME%"
+  NAME: AWSCLI
+  POLICY_CATEGORY: '%CATEGORY%'
+  POLICY_NAME: Install Latest %NAME%
   POLICY_TEMPLATE: JamfPolicyTemplate.xml
   POLICY_TRIGGER: Install_AWSCLI
   SELF_SERVICE_DESCRIPTION: WorkPlace.
-  SELF_SERVICE_DISPLAY_NAME: "Install Latest %NAME%"
-  SELF_SERVICE_ICON: "%NAME%.png"
+  SELF_SERVICE_DISPLAY_NAME: Install Latest %NAME%
+  SELF_SERVICE_ICON: '%NAME%.png'
   TESTING_GROUP_NAME: Testing
   UPDATE_PREDICATE: pkg_uploaded == True
 MinimumVersion: 0.6.1
+ParentRecipe: com.github.homebysix.pkg.AWSCLI
+ParentRecipeTrustInfo:
+  non_core_processors: {}
+  parent_recipes:
+    com.github.homebysix.download.AWSCLI:
+      git_hash: b76a7d0419c0f028ed9275c474dbf7faf846fb40
+      path: ~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/Amazon/AWSCLI.download.recipe
+      sha256_hash: a378a70d339946beb7b9f521a2848f3c21e40e168789b8f9ab554cee1853e544
+    com.github.homebysix.pkg.AWSCLI:
+      git_hash: ee6e490dd6065ceeb0e47547a0c773b6474ee8e5
+      path: ~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/Amazon/AWSCLI.pkg.recipe
+      sha256_hash: 9dd09c4ab6e08b48b5eedc3d528afd619d5432c9f807a7e11ca03ef16be59fcb
 Process:
-  - Arguments:
-      category_name: "%CATEGORY%"
-    Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
-    replace_category: True
-
-  - Arguments:
-      pkg_category: "%CATEGORY%"
-    Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
-
-  - Arguments:
-      predicate: "%UPDATE_PREDICATE%"
-    Processor: StopProcessingIf
-
-  - Arguments:
-      computergroup_name: "%GROUP_NAME%"
-      computergroup_template: "%GROUP_TEMPLATE%"
-      replace_group: True
-    Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
-
-  - Arguments:
-      category_name: "%POLICY_CATEGORY%"
-    Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
-
-  - Arguments:
-      icon: "%SELF_SERVICE_ICON%"
-      policy_name: "%POLICY_NAME%"
-      policy_template: "%POLICY_TEMPLATE%"
-      replace_policy: True
-    Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
+- Arguments:
+    category_name: '%CATEGORY%'
+  Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
+  replace_category: true
+- Arguments:
+    pkg_category: '%CATEGORY%'
+  Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
+- Arguments:
+    predicate: '%UPDATE_PREDICATE%'
+  Processor: StopProcessingIf
+- Arguments:
+    computergroup_name: '%GROUP_NAME%'
+    computergroup_template: '%GROUP_TEMPLATE%'
+    replace_group: true
+  Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
+- Arguments:
+    category_name: '%POLICY_CATEGORY%'
+  Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
+- Arguments:
+    icon: '%SELF_SERVICE_ICON%'
+    policy_name: '%POLICY_NAME%'
+    policy_template: '%POLICY_TEMPLATE%'
+    replace_policy: true
+  Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
