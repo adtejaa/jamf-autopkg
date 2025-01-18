@@ -57,9 +57,9 @@ jobs:
         defaults write com.github.autopkg RECIPE_OVERRIDE_DIRS "$(pwd)"/overrides/
         defaults write com.github.autopkg FAIL_RECIPES_WITHOUT_TRUST_INFO -bool YES
         defaults write com.github.autopkg GITHUB_TOKEN "${{ secrets.GITHUB_TOKEN }}"
-        defaults write com.github.autopkg JAMFUSER "${{ secrets.JAMFUSER }}"
-        defaults write com.github.autopkg JAMFPASSWORD "${{ secrets.JAMFPASSWORD }}"
-        defaults write com.github.autopkg JAMFURL "${{ secrets.JAMFURL }}"
+        defaults write com.github.autopkg JAMF_API_USERNAME "${{ secrets.JAMF_API_USERNAME }}"
+        defaults write com.github.autopkg JAMF_API_PASSWORD "${{ secrets.JAMF_API_PASSWORD }}"
+        defaults write com.github.autopkg JAMF_URL "${{ secrets.JAMF_URL }}"
         git config --global user.name "runner"
         git config --global user.email "runner@githubactions.local"
 
