@@ -60,6 +60,10 @@ jobs:
         defaults write com.github.autopkg JAMF_API_USERNAME "${{ secrets.JAMF_API_USERNAME }}"
         defaults write com.github.autopkg JAMF_API_PASSWORD "${{ secrets.JAMF_API_PASSWORD }}"
         defaults write com.github.autopkg JAMF_URL "${{ secrets.JAMF_URL }}"
+
+        defaults write com.github.autopkg API_USERNAME "${{ secrets.JAMF_API_USERNAME }}"
+        defaults write com.github.autopkg API_PASSWORD "${{ secrets.JAMF_API_PASSWORD }}"
+        defaults write com.github.autopkg JSS_URL "${{ secrets.JAMF_URL }}"
         git config --global user.name "runner"
         git config --global user.email "runner@githubactions.local"
 
