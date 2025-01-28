@@ -37,7 +37,7 @@ Process:
     Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
 
   - Arguments:
-      predicate: "%REMOVE_OLD_PACKAGES% == false"
+      predicate: "%UPDATE_PREDICATE%"
     Processor: StopProcessingIf
 
   - Arguments:
