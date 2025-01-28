@@ -27,27 +27,39 @@ ParentRecipeTrustInfo:
       path: ~/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes/Amazon/AWSCLI.pkg.recipe
       sha256_hash: 9dd09c4ab6e08b48b5eedc3d528afd619d5432c9f807a7e11ca03ef16be59fcb
 Process:
-- Arguments:
-    category_name: '%CATEGORY%'
-  Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
-  replace_category: true
-- Arguments:
-    pkg_category: '%CATEGORY%'
-  Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
-- Arguments:
-    predicate: '%UPDATE_PREDICATE%'
-  Processor: StopProcessingIf
-- Arguments:
-    computergroup_name: '%GROUP_NAME%'
-    computergroup_template: '%GROUP_TEMPLATE%'
-    replace_group: true
-  Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
-- Arguments:
-    category_name: '%POLICY_CATEGORY%'
-  Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
-- Arguments:
-    icon: '%SELF_SERVICE_ICON%'
-    policy_name: '%POLICY_NAME%'
-    policy_template: '%POLICY_TEMPLATE%'
-    replace_policy: true
-  Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
+  - Arguments:
+      category_name: "%CATEGORY%"
+    Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
+    replace_category: True
+
+  - Arguments:
+      pkg_category: "%CATEGORY%"
+    Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
+
+  - Arguments:
+      predicate: "%REMOVE_OLD_PACKAGES% == false"
+    Processor: StopProcessingIf
+
+  - Arguments:
+      computergroup_name: "%GROUP_NAME%"
+      computergroup_template: "%GROUP_TEMPLATE%"
+      replace_group: True
+    Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
+
+  - Arguments:
+      category_name: "%POLICY_CATEGORY%"
+    Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
+
+  - Arguments:
+      icon: "%SELF_SERVICE_ICON%"
+      policy_name: "%POLICY_NAME%"
+      policy_template: "%POLICY_TEMPLATE%"
+      replace_policy: True
+    Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
+
+  - Processor: com.github.grahampugh.recipes.postprocessor/LastRecipeRunResult
+
+  - Processor: com.github.grahampugh.recipes.jamf-upload.processors/JamfPackageCleaner
+    Arguments:
+      pkg_name_match: "%NAME%-"
+      versions_to_keep: 2
