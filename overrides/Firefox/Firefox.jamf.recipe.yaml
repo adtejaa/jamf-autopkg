@@ -44,3 +44,10 @@ ParentRecipeTrustInfo:
       git_hash: b195cea242886d8350fcd06df3a0368e8a8dcd19
       path: ~/Library/AutoPkg/RecipeRepos/com.github.autopkg.rtrouton-recipes/Firefox/Firefox.pkg.recipe
       sha256_hash: b0e97095f63138bbf4bcb53565280f956957b8871efd23c3f207588369fa5bc6
+  Process:
+  - Processor: com.github.grahampugh.recipes.postprocessor/LastRecipeRunResult
+
+  - Processor: com.github.grahampugh.recipes.jamf-upload.processors/JamfPackageCleaner
+    Arguments:
+      pkg_name_match: "%NAME%-"
+      versions_to_keep: 2
