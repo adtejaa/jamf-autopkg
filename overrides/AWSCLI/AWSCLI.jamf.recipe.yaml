@@ -57,7 +57,7 @@ Process:
       replace_policy: True
     Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
 
-  - Processor: com.github.grahampugh.recipes.postprocessor/LastRecipeRunResult
+  - Processor: com.github.grahampugh.recipes.postprocessors/LastRecipeRunResult
 
   - Processor: com.github.grahampugh.recipes.jamf-upload.processors/JamfPackageCleaner
     Arguments:
