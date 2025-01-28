@@ -1,4 +1,4 @@
-Identifier: com.github.adtejaa.jamf.AWSCLI
+Identifier: local.jamf.AWSCLI
 Input:
   CATEGORY: Utility
   GROUP_NAME: '%NAME%-update-smart'
