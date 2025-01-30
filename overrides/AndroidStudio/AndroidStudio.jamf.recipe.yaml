@@ -54,9 +54,9 @@ Process:
       pkg_category: "%CATEGORY%"
     Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
 
-  - Arguments:
-      predicate: "%UPDATE_PREDICATE%"
-    Processor: StopProcessingIf
+  - Processor: StopProcessingIf
+    Arguments:
+      predicate: '%UPDATE_PREDICATE%'
 
   - Arguments:
       computergroup_name: "%GROUP_NAME%"
