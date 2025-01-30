@@ -13,7 +13,7 @@ Input:
   POLICY_TEMPLATE: JamfPolicyTemplate.xml
   SELF_SERVICE_DESCRIPTION: The official IDE for Android app development now accelerates your productivity with Gemini in Android Studio, your AI-powered coding companion.
   SELF_SERVICE_DISPLAY_NAME: Install Latest %NAME%
-  SELF_SERVICE_ICON: '%NAME%.png'
+  SELF_SERVICE_ICON: 'Android_Studio.png'
   UPDATE_PREDICATE: pkg_uploaded == False
 
 ParentRecipe: com.github.autopkg.grahampugh-recipes.jamf.AndroidStudio-pkg-upload
