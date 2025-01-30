@@ -9,7 +9,7 @@ Input:
   GROUP_NAME: '%NAME%-update-smart'
   GROUP_TEMPLATE: JamfSmartGroupTemplate.xml
   POLICY_CATEGORY: '%CATEGORY%'
-  POLICY_NAME: Install Latest %NAME%
+  POLICY_NAME: Install %NAME%
   POLICY_TEMPLATE: JamfPolicyTemplate.xml
   SELF_SERVICE_DESCRIPTION: The official IDE for Android app development now accelerates your productivity with Gemini in Android Studio, your AI-powered coding companion.
   SELF_SERVICE_DISPLAY_NAME: Install Latest %NAME%
@@ -67,13 +67,14 @@ Process:
   - Arguments:
       category_name: "%POLICY_CATEGORY%"
     Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
-
-  - Arguments:
+ 
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
+    Arguments:
       icon: "%SELF_SERVICE_ICON%"
       policy_name: "%POLICY_NAME%"
       policy_template: "%POLICY_TEMPLATE%"
       replace_policy: True
-    Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
+   
 
   - Processor: com.github.grahampugh.recipes.postprocessors/LastRecipeRunResult
 
