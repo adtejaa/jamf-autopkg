@@ -6,3 +6,5 @@ https://github.com/autopkg/rtrouton-recipes
 https://github.com/autopkg/smithjw-recipes
 https://github.com/autopkg/dataJAR-recipes
 https://github.com/smithjw/smithjw-actions-recipes
+https://github.com/smithjw/smithjw-actions-recipes
+https://github.com/autopkg/novaksam-recipes
