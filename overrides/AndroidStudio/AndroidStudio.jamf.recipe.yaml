@@ -56,7 +56,7 @@ Process:
 
   - Processor: StopProcessingIf
     Arguments:
-      predicate: '%UPDATE_PREDICATE%'
+      predicate: False
 
   - Arguments:
       computergroup_name: "%GROUP_NAME%"
@@ -80,5 +80,5 @@ Process:
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageCleaner
     Arguments:
-      pkg_name_match: "%NAME%-"
+      pkg_name_match: "%NAME%"
       versions_to_keep: 2
