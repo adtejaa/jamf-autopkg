@@ -1,0 +1,108 @@
+---
+Description: |
+  Downloads, packages, and uploads Azul Zulu Java to Jamf Pro, then creates a deployment policy.
+  Architectures: x86, arm
+  Extensions: zip, tar.gz, dmg
+  Bundle Types: jre, jdk, jre_fx, jdk_fx
+Identifier: local.adtejaa.jamf.AzulZuluJava21
+MinimumVersion: 2.3.0
+
+ProcessorPathOverrides:
+  AzulZuluJavaInfoProvider: "/Users/palladh/Library/AutoPkg/RecipeOverrides/AzulZuluJavaInfoProvider.py"
+
+Input:
+  NAME: AzulZuluJava
+  JAVA_MAJOR_VERSION: "21"
+  ARCHITECTURE: arm
+  DOWNLOAD_FILE_EXTENSION: dmg
+  BUNDLE_TYPE: jdk
+  CATEGORY: Developer Tools
+  POLICY_CATEGORY: '%CATEGORY%'
+  POLICY_NAME: Install Latest %NAME%'
+  POLICY_TEMPLATE: JamfPolicyTemplate.xml
+  POLICY_TRIGGER: Install_AzulZuluJava
+  SELF_SERVICE_DESCRIPTION: WorkPlace.
+  SELF_SERVICE_DISPLAY_NAME: Install Latest %NAME%'
+  SELF_SERVICE_ICON: '%NAME%.png'
+  JAMF_PKG_INFO: 'Azul Zulu builds of OpenJDK are open source, TCK-tested and certified builds of OpenJDK. Azul Zulu is available for a wide range of hardware platforms and operating systems.'
+  JAMF_PKG_NOTES: 'Generated and uploaded by AutoPkg'
+  JAMF_PKG_PRIORITY: '10'
+  JAMF_PKG_REBOOT_REQUIRED: 'False'
+  JAMF_PKG_OS_REQUIREMENTS: ''
+  JAMF_PKG_REQUIRED_PROCESSOR: None
+  JAMF_PKG_SEND_NOTIFICATION: 'False'
+  JAMF_PKG_REPLACE: 'False'
+  JAMF_PKG_REPLACE_METADATA: 'False'
+  JAMF_CATEGORY: Developer Tools
+  JAMF_PKG_NAME: '%NAME%'
+
+  UPDATE_PREDICATE: pkg_uploaded == False
+
+Process:
+
+- Processor: AzulZuluJavaInfoProvider
+  Arguments:
+    java_major_version: "%JAVA_MAJOR_VERSION%"  # ✅ Fix here
+    arch: "%ARCHITECTURE%"
+    extension: "%DOWNLOAD_FILE_EXTENSION%"
+    bundle_type: "%BUNDLE_TYPE%"
+
+### 🔹 2. Download AzulZulu Java ###
+- Processor: URLDownloader
+
+### 🔹 3. Verify Download and Stop If Needed ###
+- Processor: EndOfCheckPhase
+
+- Processor: PkgCopier
+  Arguments:
+    source_pkg: "%pathname%/*.pkg"
+    pkg_path: "%RECIPE_CACHE_DIR%/%NAME%_%java_version%.%openjdk_build_number%_%BUNDLE_TYPE%_%ARCHITECTURE%-%version%.pkg"
+
+- Processor: CodeSignatureVerifier
+  Arguments:
+    input_path: "%pkg_path%"
+    expected_authority_names:
+      - "Developer ID Installer: Azul Systems, Inc. (TDTHCUPYFR)"
+      - Developer ID Certification Authority
+      - Apple Root CA
+
+### 🔹 4. Upload Package Category to Jamf ###
+- Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
+  Arguments:
+    category_name: '%CATEGORY%'
+    replace_category: true
+
+### 🔹 5. Upload AzulZulu Java Package to Jamf ###
+- Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
+  Arguments:
+    pkg_name: '%NAME%_%java_version%.%openjdk_build_number%_%BUNDLE_TYPE%_%ARCHITECTURE%-%version%.pkg'
+    pkg_category: '%JAMF_CATEGORY%'
+    pkg_info: '%JAMF_PKG_INFO%'
+    pkg_notes: '%JAMF_PKG_NOTES%'
+    pkg_priority: '%JAMF_PKG_PRIORITY%'
+    reboot_required: '%JAMF_PKG_REBOOT_REQUIRED%'
+    os_requirements: '%JAMF_PKG_OS_REQUIREMENTS%'
+    required_processor: '%JAMF_PKG_REQUIRED_PROCESSOR%'
+    send_notification: '%JAMF_PKG_SEND_NOTIFICATION%'
+    replace_pkg: '%JAMF_PKG_REPLACE%'
+    replace_pkg_metadata: '%JAMF_PKG_REPLACE_METADATA%'
+
+### 🔹 6. Stop Processing If Package is Already Uploaded ###
+- Processor: StopProcessingIf
+  Arguments:
+    predicate: '%UPDATE_PREDICATE%'
+
+### 🔹 7. Create a Smart Group in Jamf ###
+- Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
+  Arguments:
+    computergroup_name: '%GROUP_NAME%'
+    computergroup_template: '%GROUP_TEMPLATE%'
+    replace_group: true
+
+### 🔹 8. Upload Policy to Jamf for Self-Service ###
+- Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
+  Arguments:
+    policy_name: '%POLICY_NAME%'
+    policy_template: '%POLICY_TEMPLATE%'
+    replace_policy: true
+    icon: '%SELF_SERVICE_ICON%'
