@@ -8,7 +8,7 @@ Identifier: local.adtejaa.jamf.AzulZuluJava21
 MinimumVersion: 2.3.0
 
 ProcessorPathOverrides:
-  AzulZuluJavaInfoProvider: "/Users/palladh/Library/AutoPkg/RecipeOverrides/AzulZuluJavaInfoProvider.py"
+  AzulZuluJavaInfoProvider: "/Azul/21//AzulZuluJavaInfoProvider.py"
 
 Input:
   NAME: AzulZuluJava
