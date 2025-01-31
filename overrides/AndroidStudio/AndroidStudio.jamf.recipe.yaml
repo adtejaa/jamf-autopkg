@@ -52,10 +52,10 @@ ParentRecipeTrustInfo:
       git_hash: 317410696a2577136f9b2d05d28e22f864bd3727
       path: ~/Library/AutoPkg/RecipeRepos/com.github.autopkg.novaksam-recipes/Recipes - pkg/AndroidStudio.pkg.recipe
       sha256_hash: 025e9526bfd7005bfb5c6ab0fdbc51eeb83ea08dec25d27ca5bf2c8bb78adcf1
- Process:
+Process:
   - Processor: com.github.grahampugh.recipes.postprocessors/LastRecipeRunResult
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageCleaner
     Arguments:
-      pkg_name_match: "%NAME%"
+      pkg_name_match: "%NAME%-"
       versions_to_keep: 2
