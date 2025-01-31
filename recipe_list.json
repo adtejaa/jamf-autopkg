@@ -1,5 +1,6 @@
 [
 	"AWSCLI/AWSCLI.jamf.recipe.yaml",
 	"Firefox/Firefox.jamf.recipe.yaml",
-	"AndroidStudio/AndroidStudio.jamf.recipe.yaml"
+	"AndroidStudio/AndroidStudio.jamf.recipe.yaml",
+	"Azul/21/Azul.jamf.recipe.yaml"
 ]
