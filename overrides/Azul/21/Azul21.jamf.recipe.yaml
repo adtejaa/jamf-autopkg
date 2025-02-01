@@ -30,7 +30,7 @@ ParentRecipe: com.github.adtejaa.jamf.AzulZuluJava21
 ParentRecipeTrustInfo:
   non_core_processors:
     AzulZuluJavaInfoProvider:
-      path: "~/Library/AutoPkg/RecipeRepos/com.github.adtejaa.autopkg-recipes/Azul/AzulZuluJavaInfoProvider.py"
+      path: "Azul/21/AzulZuluJavaInfoProvider.py"
       sha256_hash: "bdbf2182e7506c1c22526b9fca898a3754cd698baa65a97b9baf64a26624907e"
     com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader:
       git_hash: "febfabb5d43579197a98dd738b85840321c2a369"
