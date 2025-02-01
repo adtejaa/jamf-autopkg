@@ -23,9 +23,9 @@ Input:
   POLICY_CATEGORY: "%CATEGORY%"
   POLICY_NAME: 'Install_AzulZuluJava21'
   POLICY_TEMPLATE: JamfPolicyTemplate.xml
-  POLICY_TRIGGER: Install_AzulZuluJava21
+  POLICY_TRIGGER: "Install_AzulZuluJava21"
   SELF_SERVICE_DESCRIPTION: "Azul Zulu Java 21"
-  SELF_SERVICE_DISPLAY_NAME: "Install Latest %NAME%'"
+  SELF_SERVICE_DISPLAY_NAME: "Install Latest %NAME%"
   SELF_SERVICE_ICON: "%NAME%.jpg"
   UPDATE_PREDICATE: pkg_uploaded == True
   GROUP_TEMPLATE: JamfSmartGroupTemplate.xml
