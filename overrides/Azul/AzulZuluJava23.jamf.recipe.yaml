@@ -10,7 +10,7 @@ Input:
   java_version: "%java_version%"
   SELF_SERVICE_ICON: "AzulZuluJava.jpg"
 
-ParentRecipe: com.github.adtejaa.jamf.AzulZuluJava21
+ParentRecipe: com.github.adtejaa.jamf.AzulZuluJava
 
 ParentRecipeTrustInfo:
   non_core_processors:
@@ -40,6 +40,6 @@ ParentRecipeTrustInfo:
       sha256_hash: 5d6715bfe85efbb3034ed36c27da2114742235232c0c156343fd70fc63d3d124
 
   parent_recipes:
-    com.github.adtejaa.jamf.AzulZuluJava21:
+    com.github.adtejaa.jamf.AzulZuluJava:
       path: ~/Library/AutoPkg/RecipeRepos/com.github.adtejaa.autopkg-recipes/Azul/AzulZuluJava21.jamf.recipe.yaml
       sha256_hash: 34eba3f86a9d2871099644a241a5a2329af251c66ca63f56bec645d1ddf1311c
