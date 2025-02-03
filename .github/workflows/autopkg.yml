@@ -71,11 +71,6 @@ jobs:
       run: |
         for repo in $(cat repo_list.txt); do autopkg repo-add "$repo"; done
         
-    - name: Update AutoPkg Trust Info
-      run: |
-        for recipe in $(autopkg search . | awk '{print $1}'); do
-        autopkg verify-trust-info "$recipe" || autopkg update-trust-info "$recipe"
-        done
 
     - name: Run AutoPkg
       run: |
