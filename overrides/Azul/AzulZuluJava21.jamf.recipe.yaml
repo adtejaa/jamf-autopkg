@@ -5,8 +5,7 @@ Input:
   GROUP_NAME: '%NAME%_%version%'
   GROUP_TEMPLATE: JamfSmartGroupTemplate.xml
   POLICY_NAME: AzulZuluJava_%version%
-  SELF_SERVICE_DISPLAY_NAME: AzulZuluJava_%version%
-  JAMF_PKG_NAME: AzulZuluJava_%version%
+  SELF_SERVICE_DISPLAY_NAME: AzulZuluJava_%java_version%_%version%
   version: "%version%"
   java_version: "%java_version%"
   SELF_SERVICE_ICON: "AzulZuluJava.jpg"
