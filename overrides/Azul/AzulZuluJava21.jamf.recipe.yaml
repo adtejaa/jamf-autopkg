@@ -2,6 +2,7 @@ Identifier: local.jamf.AzulZuluJava21
 
 Input:
   NAME: AzulZuluJava21
+  JAVA_MAJOR_VERSION: "21"
   GROUP_NAME: '%NAME%'
   GROUP_TEMPLATE: JamfSmartGroupTemplate.xml
   POLICY_NAME: '%NAME%'
