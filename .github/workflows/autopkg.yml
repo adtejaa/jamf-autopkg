@@ -1,43 +1,45 @@
 name: Autopkg run
 
 on:
-  workflow_dispatch: # Manually triggered workflow
+  watch:
+    types: [started]
+  # Commenting out the automated schedule so this AutoPKG build doesn't run on its own.
+  # Keep this part in to run on a set schedule
+  # schedule: 
+    # - cron: 00 14 * * 1-5
+  workflow_dispatch: # manually triggered
     inputs:
       recipe:
         description: Optional recipe to run (e.g. Google/GoogleChrome-test.jamf.recipe.yaml)
         required: false
       debug:
-        description: Enable debug mode
+        description: Enable debug
         required: false
         default: 'False'
         type: choice
         options:
         - 'False'
         - 'True'
-
 permissions:
   contents: write
-
 jobs:
   AutoPkg:
     runs-on: macos-latest
-    timeout-minutes: 90
+    timeout-minutes: 90 # Keeps your builds from running too long
     env:
       AUTOPKG_SHA256: "1944a69aad18b0b9618b48292d115412a98ca165b626f48b11bbc59b504af082"
       AUTOPKG_URL: "https://github.com/autopkg/autopkg/releases/download/v2.7.3/autopkg-2.7.3.pkg"
-    
     steps:
     - name: Checkout AutoPkg recipes
-      uses: actions/checkout@v3
+      uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 #v3.5.3 Pin SHA1 hash instead of version
       with:
         fetch-depth: 1
-
     - name: Setup Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@61a6322f88396a6271a6ee3565807d608ecaddd1 #v4.7.0
       with:
         python-version: 3.11
 
-    - name: Install Python dependencies
+    - name: Install Python dependencies #(remove pyyaml line if you don't use yaml recipes)
       run: |
         pip3 install --upgrade pip
         pip3 install -r requirements.txt
@@ -62,7 +64,6 @@ jobs:
         defaults write com.github.autopkg API_USERNAME "${{ secrets.JAMF_API_USERNAME }}"
         defaults write com.github.autopkg API_PASSWORD "${{ secrets.JAMF_API_PASSWORD }}"
         defaults write com.github.autopkg JSS_URL "${{ secrets.JAMF_URL }}"
-        
         git config --global user.name "runner"
         git config --global user.email "runner@githubactions.local"
 
@@ -70,31 +71,18 @@ jobs:
       run: |
         for repo in $(cat repo_list.txt); do autopkg repo-add "$repo"; done
 
-    - name: Update AutoPkg Trust Info
-      run: |
-        for recipe in $(autopkg search . | awk '{print $1}'); do
-          autopkg verify-trust-info "$recipe" || autopkg update-trust-info "$recipe"
-        done
-
-    - name: Commit Updated Trust Info
-      run: |
-        git add .
-        git commit -m "Updated AutoPkg trust info"
-        git push origin main || echo "No changes to commit"
-
     - name: Run AutoPkg
       run: |
         python3 autopkg_tools.py -l recipe_list.json
         if [ -f pull_request_title ]; then
-          echo "TITLE=$(cat pull_request_title)" >> $GITHUB_ENV
-          echo "BODY<<EOF" >> $GITHUB_ENV
-          cat pull_request_body >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+        echo "TITLE=$(cat pull_request_title)" >> $GITHUB_ENV
+        echo "BODY<<EOF" >> $GITHUB_ENV
+        cat pull_request_body >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
         fi
       env:
         RECIPE: ${{ github.event.inputs.recipe }}
-
-    - name: Create Trust Info Pull Request
+    - name: Create Trust Info pull request
       if: env.TITLE
       run: |
         export BRANCH_NAME=trust-info-`date +'%Y-%m-%d'`
