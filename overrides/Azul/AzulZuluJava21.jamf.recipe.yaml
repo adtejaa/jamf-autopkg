@@ -1,35 +1,15 @@
 Identifier: local.jamf.AzulZuluJava21
 
 Input:
-  ARCHITECTURE: arm
-  BUNDLE_TYPE: jdk
-  CATEGORY: Developer Tools
-  DOWNLOAD_FILE_EXTENSION: dmg
-  JAMF_CATEGORY: Developer Tools
-  JAMF_PKG_INFO: |
-    Azul Zulu builds of OpenJDK are open source, TCK-tested and certified builds of OpenJDK.
-    Azul Zulu is available for a wide range of hardware platforms and operating systems.
-  JAMF_PKG_NAME: "%NAME%"
-  JAMF_PKG_NOTES: Generated and uploaded by AutoPkg
-  JAMF_PKG_OS_REQUIREMENTS: ""
-  JAMF_PKG_PRIORITY: "10"
-  JAMF_PKG_REBOOT_REQUIRED: "False"
-  JAMF_PKG_REPLACE: "False"
-  JAMF_PKG_REPLACE_METADATA: "False"
-  JAMF_PKG_REQUIRED_PROCESSOR: None
-  JAMF_PKG_SEND_NOTIFICATION: "False"
-  JAVA_MAJOR_VERSION: "21"
-  NAME: AzulZuluJava21
-  POLICY_CATEGORY: "%CATEGORY%"
-  POLICY_NAME: 'Install_AzulZuluJava21'
-  POLICY_TEMPLATE: JamfPolicyTemplate.xml
-  POLICY_TRIGGER: "Install_AzulZuluJava21"
-  SELF_SERVICE_DESCRIPTION: "Azul Zulu Java 21"
-  SELF_SERVICE_DISPLAY_NAME: "Install Latest %NAME%"
-  SELF_SERVICE_ICON: "%NAME%.jpg"
-  UPDATE_PREDICATE: pkg_uploaded == True
+  NAME: 'AzulZuluJava_%version%'
+  GROUP_NAME: '%NAME%_%version%'
   GROUP_TEMPLATE: JamfSmartGroupTemplate.xml
-  GROUP_NAME: "%NAME%"
+  POLICY_NAME: AzulZuluJava_%version%
+  SELF_SERVICE_DISPLAY_NAME: AzulZuluJava_%version%
+  JAMF_PKG_NAME: AzulZuluJava_%version%
+  version: "%version%"
+  java_version: "%java_version%"
+  SELF_SERVICE_ICON: "AzulZuluJava.jpg"
 
 ParentRecipe: com.github.adtejaa.jamf.AzulZuluJava21
 
@@ -62,6 +42,5 @@ ParentRecipeTrustInfo:
 
   parent_recipes:
     com.github.adtejaa.jamf.AzulZuluJava21:
-      git_hash: 1163aa42c24eef311f7d403a5a6bff0657d7213f
       path: ~/Library/AutoPkg/RecipeRepos/com.github.adtejaa.autopkg-recipes/Azul/AzulZuluJava21.jamf.recipe.yaml
-      sha256_hash: 327d11e259160bdf7f87ef2fbbffec4ecd883ff147489ed460d45f74fd2d1557
+      sha256_hash: 34eba3f86a9d2871099644a241a5a2329af251c66ca63f56bec645d1ddf1311c
