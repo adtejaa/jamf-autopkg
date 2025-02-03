@@ -2,10 +2,9 @@ Identifier: local.jamf.AzulZuluJava21
 
 Input:
   NAME: 'AzulZuluJava_%version%'
-  GROUP_NAME: '%NAME%_%version%'
+  GROUP_NAME: '%NAME%'
   GROUP_TEMPLATE: JamfSmartGroupTemplate.xml
-  POLICY_NAME: AzulZuluJava_%version%
-  SELF_SERVICE_DISPLAY_NAME: AzulZuluJava_%java_version%_%version%
+  POLICY_NAME: '%NAME%'
   version: "%version%"
   java_version: "%java_version%"
   SELF_SERVICE_ICON: "AzulZuluJava.jpg"
