@@ -32,7 +32,7 @@ Input:
   GROUP_TEMPLATE: JamfSmartGroupTemplate.xml
   GROUP_NAME: "%NAME%"
 
-ParentRecipe: com.github.adtejaa.jamf.AzulZuluJava23
+ParentRecipe: com.github.adtejaa.jamf.AzulZuluJava21
 
 ParentRecipeTrustInfo:
   non_core_processors:
