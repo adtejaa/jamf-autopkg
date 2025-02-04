@@ -2,18 +2,17 @@ Identifier: local.jamf.Axure
 Input:
   BASE_URL: "https://axure.cachefly.net/versions"
   CATEGORY: "Development"
-  GROUP_NAME: "Axure RP"
+  GROUP_NAME: "%NAME%"
   GROUP_TEMPLATE: "JamfSmartGroupTemplate.xml"
   MAJOR_VERSION: "9"
-  NAME: "Axure RP"
+   NAME: "Axure RP %MAJOR_VERSION%"
   POLICY_CATEGORY: "Development"
-  POLICY_NAME: "Install Axure RP"
+  POLICY_NAME: "%NAME%"
   POLICY_TEMPLATE: "JamfPolicyTemplate.xml"
   SELF_SERVICE_DESCRIPTION: "Axure RP is the only UX tool that gives UX professionals the power to build realistic, functional prototypes."
   SELF_SERVICE_ICON: "Axure.png"
   UPDATE_PREDICATE: "pkg_uploaded == False"
 
-ParentRecipe: "com.github.adtejaa.axure"
 
 ParentRecipeTrustInfo:
   non_core_processors:
