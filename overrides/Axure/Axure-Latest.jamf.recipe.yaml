@@ -13,10 +13,7 @@ Input:
   SELF_SERVICE_DESCRIPTION: "Axure RP is the only UX tool that gives UX professionals the power to build realistic, functional prototypes."
   SELF_SERVICE_ICON: "Axure.png"
   UPDATE_PREDICATE: "pkg_uploaded == False"
-  replace_pkg: True
-  replace_policy: True
-  replace_group: True
-  replace_category: True
+
 
 ParentRecipe: "com.github.adtejaa.axure-latest"
 
