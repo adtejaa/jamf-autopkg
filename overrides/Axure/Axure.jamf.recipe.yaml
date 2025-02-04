@@ -14,6 +14,8 @@ Input:
   UPDATE_PREDICATE: "pkg_uploaded == False"
 
 
+ParentRecipe: com.github.adtejaa.axure
+
 ParentRecipeTrustInfo:
   non_core_processors:
     com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader:
