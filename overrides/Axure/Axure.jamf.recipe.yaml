@@ -5,7 +5,7 @@ Input:
   GROUP_NAME: "%NAME%"
   GROUP_TEMPLATE: "JamfSmartGroupTemplate.xml"
   MAJOR_VERSION: "9"
-   NAME: "Axure RP %MAJOR_VERSION%"
+  NAME: "Axure RP %MAJOR_VERSION%"
   POLICY_CATEGORY: "Development"
   POLICY_NAME: "%NAME%"
   POLICY_TEMPLATE: "JamfPolicyTemplate.xml"
