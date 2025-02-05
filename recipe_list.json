@@ -4,5 +4,6 @@
 	"Azul/AzulZuluJava23.jamf.recipe.yaml",
 	"AWSCLI/AWSCLI.jamf.recipe.yaml",
 	"Axure/Axure.jamf.recipe.yaml",
-	"Axure/Axure-Latest.jamf.recipe.yaml"
+	"Axure/Axure-Latest.jamf.recipe.yaml",
+	"IntellijIDEAUltimateEdition/intellijue.jamf.recipe.yaml"
 ]
