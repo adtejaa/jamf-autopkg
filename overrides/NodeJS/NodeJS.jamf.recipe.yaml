@@ -5,7 +5,6 @@ Input:
   DOWNLOAD_PATTERN: node-v([0-9\.]+).pkg
   DOWNLOAD_URL: https://nodejs.org/dist/latest/
   NAME: NodeJS
-  SOFTWARE_TITLE: '%NAME%'
   PACKAGE_INFO: autopkg
   POLICY_CATEGORY: Apps
   POLICY_CUSTOM_TRIGGER: install-%NAME%
@@ -19,11 +18,12 @@ Input:
   REPLACE_POLICY: 'true'
   SELF_SERVICE_AVAILABLE: 'true'
   SELF_SERVICE_CATEGORY: '%CATEGORY%'
-  SELF_SERVICE_DESCRIPTION: 'Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.'
-  SELF_SERVICE_DISPLAY_NAME: '%NAME%'
+  SELF_SERVICE_DESCRIPTION: ''
+  SELF_SERVICE_DISPLAY_NAME: Install Latest %NAME%
   SELF_SERVICE_ICON: '%NAME%.png'
   SELF_SERVICE_INSTALL_BUTTON: Install
   SELF_SERVICE_REINSTALL_BUTTON: Install
+  SOFTWARE_TITLE: '%NAME%'
   UPDATE_PREDICATE: pkg_uploaded == False
 ParentRecipe: com.github.autopkg.grahampugh-recipes.jamf.NodeJS
 ParentRecipeTrustInfo:
