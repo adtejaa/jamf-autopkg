@@ -1,6 +1,7 @@
 Identifier: local.jamf.MacTeX
 Input:
   CATEGORY: Apps
+  BYPASS_STOP_PROCESSING_IF_DOWNLOAD_UNCHANGED: null
   DOWNLOADPAGE_URL: "http://www.tug.org/mactex/mactex-download.html"
   GROUP_NAME: "%NAME%"
   GROUP_TEMPLATE: JamfSmartGroupTemplate.xml
