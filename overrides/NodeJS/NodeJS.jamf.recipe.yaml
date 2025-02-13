@@ -12,14 +12,14 @@ Input:
   POLICY_RUN_COMMAND: ' '
   POLICY_RUN_RECON: 'false'
   POLICY_SCOPE_ALL_COMPUTERS: 'true'
-  POLICY_TEMPLATE: JamfPolicyTemplate.xml
+  POLICY_TEMPLATE: JamfPolicyTemplate_allcomputers.xml
   REMOVE_OLD_PACKAGES: 'true'
   REPLACE_CATEGORY: 'true'
   REPLACE_POLICY: 'true'
   SELF_SERVICE_AVAILABLE: 'true'
   SELF_SERVICE_CATEGORY: '%CATEGORY%'
   SELF_SERVICE_DESCRIPTION: ''
-  SELF_SERVICE_DISPLAY_NAME: Install Latest %NAME%
+  SELF_SERVICE_DISPLAY_NAME: '%NAME%'
   SELF_SERVICE_ICON: '%NAME%.png'
   SELF_SERVICE_INSTALL_BUTTON: Install
   SELF_SERVICE_REINSTALL_BUTTON: Install
@@ -64,11 +64,6 @@ Process:
     category_name: '%CATEGORY%'
     replace_category: '%REPLACE_CATEGORY%'
   Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
-- Arguments:
-    computergroup_name: '%GROUP_NAME%'
-    computergroup_template: '%GROUP_TEMPLATE%'
-    replace_group: '%REPLACE_GROUP%'
-  Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
 - Arguments:
     pkg_category: '%CATEGORY%'
     pkg_info: '%PACKAGE_INFO%'
