@@ -5,5 +5,6 @@
 	"AWSCLI/AWSCLI.jamf.recipe.yaml",
 	"Axure/Axure.jamf.recipe.yaml",
 	"Axure/Axure-Latest.jamf.recipe.yaml",
-	"IntellijIDEAUltimateEdition/intellijue.jamf.recipe.yaml"
+	"IntellijIDEAUltimateEdition/intellijue.jamf.recipe.yaml",
+	"TableauDesktop/TableauDesktop.jamf.recipe.yaml"
 ]
