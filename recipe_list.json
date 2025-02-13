@@ -9,6 +9,7 @@
 	"TableauDesktop/TableauDesktop.jamf.recipe.yaml",
 	"Neo4j/Neo4j.jamf.recipe.yaml",
 	"RoyaltX/RoyalTSX.jamf.recipe.yaml",
-	"NodeJS/NodeJS.jamf.recipe.yaml"
+	"NodeJS/NodeJS.jamf.recipe.yaml",
+	"RoyaltX/RoyalTSX.jamf.recipe.yaml"
 
 ]
