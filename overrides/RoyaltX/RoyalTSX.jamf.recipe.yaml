@@ -1,5 +1,6 @@
 Identifier: local.jamf.RoyalTSX
 Input:
+  BYPASS_STOP_PROCESSING_IF_DOWNLOAD_UNCHANGED: null
   CATEGORY: Apps
   GROUP_NAME: "%NAME%"
   GROUP_TEMPLATE: JamfSmartGroupTemplate.xml
