@@ -9,3 +9,4 @@ https://github.com/smithjw/smithjw-actions-recipes
 https://github.com/autopkg/novaksam-recipes
 https://github.com/adtejaa/autopkg-recipes
 https://github.com/jgstew/jgstew-recipes
+https://github.com/autopkg/gmarnin-recipes
