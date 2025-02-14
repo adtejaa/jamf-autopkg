@@ -12,7 +12,8 @@
 	"NodeJS/NodeJS.jamf.recipe.yaml",
 	"RoyaltX/RoyalTSX.jamf.recipe.yaml",
 	"MacTeX/MacTex.jamf.recipe.yaml",
-	"MySQLWorkBench/MySQLWorkBench.jamf.recipe.yaml"
+	"MySQLWorkBench/MySQLWorkBench.jamf.recipe.yaml",
+	"VagrantManager/VagrantManager.jamf.recipe.yaml"
 
 
 ]
