@@ -13,7 +13,7 @@
 	"RoyaltX/RoyalTSX.jamf.recipe.yaml",
 	"MacTeX/MacTex.jamf.recipe.yaml",
 	"MySQLWorkBench/MySQLWorkBench.jamf.recipe.yaml",
-	"VagrantManager/VagrantManager.jamf.recipe.yaml"
-
+	"VagrantManager/VagrantManager.jamf.recipe.yaml",
+	"VMWareFusion/VMWareFusion.jamf.recipe.yaml"
 
 ]
