@@ -17,6 +17,8 @@
 	"VMWareFusion/VMWareFusion.jamf.recipe.yaml",
 	"OmnissaHorizonClient/OmnissaHorizonClient.jamf.recipe.yaml",
 	"RStudio/RStudio.jamf.recipe.yaml",
-	"VLC/VLC.jamf.recipe.yaml"
+	"VLC/VLC.jamf.recipe.yaml",
+	"Handbrake/HandBrake.jamf.recipe.yaml"
+
 
 ]
