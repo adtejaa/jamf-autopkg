@@ -16,6 +16,7 @@
 	"VagrantManager/VagrantManager.jamf.recipe.yaml",
 	"VMWareFusion/VMWareFusion.jamf.recipe.yaml",
 	"OmnissaHorizonClient/OmnissaHorizonClient.jamf.recipe.yaml",
-	"RStudio/RStudio.jamf.recipe.yaml"
+	"RStudio/RStudio.jamf.recipe.yaml",
+	"VLC/VLC.jamf.recipe.yaml"
 
 ]
