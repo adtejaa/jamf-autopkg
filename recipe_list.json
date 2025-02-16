@@ -14,6 +14,7 @@
 	"MacTeX/MacTex.jamf.recipe.yaml",
 	"MySQLWorkBench/MySQLWorkBench.jamf.recipe.yaml",
 	"VagrantManager/VagrantManager.jamf.recipe.yaml",
-	"VMWareFusion/VMWareFusion.jamf.recipe.yaml"
+	"VMWareFusion/VMWareFusion.jamf.recipe.yaml",
+	"OmnissaHorizonClient/Omnissa Horizon Client.jamf.recipe.yaml"
 
 ]
