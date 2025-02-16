@@ -11,3 +11,4 @@ https://github.com/adtejaa/autopkg-recipes
 https://github.com/jgstew/jgstew-recipes
 https://github.com/autopkg/gmarnin-recipes
 https://github.com/autopkg/gerardkok-recipes
+https://github.com/autopkg/justinrummel-recipes
