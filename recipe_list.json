@@ -21,7 +21,8 @@
 	"Handbrake/HandBrake.jamf.recipe.yaml",
 	"Fork/Fork.jamf.recipe.yaml",
 	"CitrixWorkspace/CitrixWorkspace.jamf.repcipe.yaml",
-	"FileZilla/FileZilla.jamf.recipe.yaml"
+	"FileZilla/FileZilla.jamf.recipe.yaml",
+	"Maccy/Maccy.jamf.recipe.yaml"
 
 
 ]
