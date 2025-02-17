@@ -19,7 +19,8 @@
 	"RStudio/RStudio.jamf.recipe.yaml",
 	"VLC/VLC.jamf.recipe.yaml",
 	"Handbrake/HandBrake.jamf.recipe.yaml",
-	"Fork/Fork.jamf.recipe.yaml"
+	"Fork/Fork.jamf.recipe.yaml",
+	"CitrixWorkspace/CitrixWorkspace.jamf.repcipe.yaml"
 
 
 ]
