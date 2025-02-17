@@ -20,7 +20,8 @@
 	"VLC/VLC.jamf.recipe.yaml",
 	"Handbrake/HandBrake.jamf.recipe.yaml",
 	"Fork/Fork.jamf.recipe.yaml",
-	"CitrixWorkspace/CitrixWorkspace.jamf.repcipe.yaml"
+	"CitrixWorkspace/CitrixWorkspace.jamf.repcipe.yaml",
+	"FileZilla/FileZilla.jamf.recipe.yaml"
 
 
 ]
