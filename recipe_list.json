@@ -22,7 +22,8 @@
 	"CitrixWorkspace/CitrixWorkspace.jamf.repcipe.yaml",
 	"FileZilla/FileZilla.jamf.recipe.yaml",
 	"Maccy/Maccy.jamf.recipe.yaml",
-	"MacPass/MacPass.jamf.recipe.yaml"
+	"MacPass/MacPass.jamf.recipe.yaml",
+	"ElagatoStreamDeck /ElgatoStreamDeck.jamf.recipe.yaml"
 
 
 ]
