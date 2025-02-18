@@ -1,5 +1,6 @@
 [
 
-	"MacPass/MacPass.jamf.recipe.yaml"
+	"MacPass/MacPass.jamf.recipe.yaml",
+	"Maccy/Maccy.jamf.recipe.yaml"
 
 ]
