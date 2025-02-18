@@ -1,6 +1,28 @@
 [
+	
+	"Azul/AzulZuluJava21.jamf.recipe.yaml",
+	"Azul/AzulZuluJava23.jamf.recipe.yaml",
+	"AWSCLI/AWSCLI.jamf.recipe.yaml",
+	"Axure/Axure.jamf.recipe.yaml",
+	"Axure/Axure-Latest.jamf.recipe.yaml",
+	"IntellijIDEAUltimateEdition/intellijue.jamf.recipe.yaml",
+	"TableauDesktop/TableauDesktop.jamf.recipe.yaml",
+	"Neo4j/Neo4j.jamf.recipe.yaml",
+	"RoyaltX/RoyalTSX.jamf.recipe.yaml",
+	"NodeJS/NodeJS.jamf.recipe.yaml",
+	"MacTeX/MacTex.jamf.recipe.yaml",
+	"MySQLWorkBench/MySQLWorkBench.jamf.recipe.yaml",
+	"VagrantManager/VagrantManager.jamf.recipe.yaml",
+	"VMWareFusion/VMWareFusion.jamf.recipe.yaml",
+	"OmnissaHorizonClient/OmnissaHorizonClient.jamf.recipe.yaml",
+	"RStudio/RStudio.jamf.recipe.yaml",
+	"VLC/VLC.jamf.recipe.yaml",
+	"Handbrake/HandBrake.jamf.recipe.yaml",
+	"Fork/Fork.jamf.recipe.yaml",
+	"CitrixWorkspace/CitrixWorkspace.jamf.repcipe.yaml",
+	"FileZilla/FileZilla.jamf.recipe.yaml",
+	"Maccy/Maccy.jamf.recipe.yaml",
+	"MacPass/MacPass.jamf.recipe.yaml"
 
-	"MacPass/MacPass.jamf.recipe.yaml",
-	"Maccy/Maccy.jamf.recipe.yaml"
 
 ]
