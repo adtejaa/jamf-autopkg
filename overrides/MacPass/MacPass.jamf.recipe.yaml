@@ -18,15 +18,13 @@ Input:
   REPLACE_POLICY: true
   SELF_SERVICE_AVAILABLE: true
   SELF_SERVICE_CATEGORY: "%CATEGORY%"
-  SELF_SERVICE_DESCRIPTION: "The IDE that makes development a more productive and enjoyable experience"
+  SELF_SERVICE_DESCRIPTION: "MacPass is a free, open-source password manager for macOS, providing secure and convenient password storage with KeePass compatibility."
   SELF_SERVICE_DISPLAY_NAME: "%NAME%"
   SELF_SERVICE_ICON: "%SOFTWARE_TITLE%.png"
   SELF_SERVICE_INSTALL_BUTTON: Install
   SELF_SERVICE_REINSTALL_BUTTON: Install
   SOFTWARE_TITLE: MacPass
   UPDATE_PREDICATE: pkg_uploaded == False
-
-  
 ParentRecipe: com.github.adtejaa.jamf.MacPass
 ParentRecipeTrustInfo:
   non_core_processors:
